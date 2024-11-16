@@ -1,27 +1,20 @@
-/* Reset some default styling */
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/images/left_sideback.png'); /* Replace with your image path */
+    background-image: url('gym_back.jpg'); /* Replace with your image path */
     background-size: cover; /* Cover the entire background */
     background-repeat: no-repeat; /* Prevent the background from repeating */
     background-attachment: fixed; /* Keep the background fixed when scrolling */
     background-position: center; /* Center the background image */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    display: flex; /* Flexbox for vertical and horizontal centering */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    min-height: 100vh; /* Full viewport height */
 }
-
-/* Navbar Styling */
 .navbar {
     background-color: #79838d; /* Navigation bar background color */
     color: rgb(234, 30, 30);
@@ -33,7 +26,6 @@ body {
     display: flex;
     justify-content: center; /* Center the logo and description */
     align-items: center; /* Center the content vertically */
-    text-align: center;
 }
 
 .navbar-logo {
@@ -70,56 +62,64 @@ body {
     color: rgb(7, 11, 10);
 }
 
-/* Recommendations Section */
-.results-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background to reveal background image */
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
+.trainers-section {
+    display: flex;
+    flex-direction: column; /* Arrange sections in a column */
     justify-content: center;
-    margin-top: 100px; /* Adjust for spacing from fixed navbar */
+    align-items: center;
+    margin: 80px 0 50px; /* Add top margin to accommodate fixed navbar */
+    padding-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(228, 224, 224, 0.1);
 }
 
-.results-section h2 {
-    font-size: 2rem;
+.trainers-section h2 {
+    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #8d9cba;
+    color: white;
+    transition: color 0.3s ease; 
 }
 
-.results-section p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #555;
+.trainers-section h2:hover{
+    color: red;
 }
 
-.results-section strong {
-    color: #3b5998;
+
+.trainers-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-img {
-        height: 40px;
-        margin-right: 10px;
-    }
+.trainer {
+    background-color:whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .navbar_des {
-        font-size: 1.2rem;
-    }
+.trainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 16px rgba(0, 0, 0, 0.2);
+}
 
-    .results-section {
-        padding: 20px;
-        margin-top: 80px; /* Adjust for spacing on smaller screens */
-    }
+.trainer-img {
+    width: 250px; /* Adjust this width as needed */
+    height: 300px; /* Adjust this height as needed */
+    object-fit: cover; /* Ensures images cover the box without stretching */
+    margin-bottom: 10px; /* Space between the image and the text */
+}
 
-    .results-section h2 {
-        font-size: 1.5rem;
-    }
 
-    .results-section p {
-        font-size: 1rem;
-    }
+.trainer h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.trainer p {
+    font-size: 1em;
+    color: #666;
 }
